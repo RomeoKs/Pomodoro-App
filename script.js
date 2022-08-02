@@ -93,6 +93,22 @@ applyBtn.addEventListener("click", () => {
 // Timer
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Let's check if the browser supports notifications
+    if ('Notification' in window) {
+        // If notification permissions have neither been granted or denied
+        if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+            // ask the user for permission
+            Notification.requestPermission().then(function (permission) {
+                // If permission is granted
+                if (permission === 'granted') {
+                    // Create a new notification
+                    new Notification(
+                        'Awesome! You will be notified at the start of each session'
+                    );
+                }
+            });
+        }
+    }
     switchMode('pomodoro');
 });
 
@@ -101,7 +117,7 @@ const timer = {
     pomodoro: document.getElementById("pomodoro").value,
     shortBreak: document.getElementById("short-break").value,
     longBreak: document.getElementById("long-break").value,
-    //longBreakInterval: 4,
+    longBreakInterval: 4,
     sessions: 0
 };
 applyBtn.addEventListener('click', handleMode);

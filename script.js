@@ -19,6 +19,7 @@ document.querySelector(".close-modal").addEventListener("click", () => {
     bck.classList.remove("active-background");
     bck.classList.add("inactive-background");
 })
+
 document.querySelector(".settings").addEventListener("click", () => {
     document.querySelector(".modal").style.display = "block";
     bck.classList.add("active-background");
@@ -94,11 +95,13 @@ applyBtn.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', () => {
     switchMode('pomodoro');
 });
+
+
 const timer = {
     pomodoro: document.getElementById("pomodoro").value,
     shortBreak: document.getElementById("short-break").value,
     longBreak: document.getElementById("long-break").value,
-    longBreakInterval: 4,
+    //longBreakInterval: 4,
     sessions: 0
 };
 applyBtn.addEventListener('click', handleMode);
@@ -112,12 +115,16 @@ applyBtn.addEventListener("click", () => {
 });
 let interval;
 
+const playSound = new Audio('./assets/play.mp3');
+//const stopSound = new Audio('./assets/stop');
+//stopSound.play();
 
 const mainButton = document.getElementById('main-button');
 mainButton.addEventListener('click', () => {
     const { action } = mainButton.dataset;
     if (action === 'start') {
         startTimer();
+        playSound.play();
     } else {
         stopTimer();
     }
@@ -196,7 +203,7 @@ function startTimer() {
                 default:
                     switchMode('pomodoro');
             }
-
+            document.querySelector(`[data-sound="${timer.mode}"]`).play();
             startTimer();
         }
     }, 1000);
@@ -220,21 +227,21 @@ function updateClock() {
 
     min.textContent = minutes;
     sec.textContent = seconds;
-
+    const text = timer.mode === 'pomodoro' ? 'Working' : 'Break time';
+    document.title = `${minutes}:${seconds} — ${text}`;
     const progress = document.getElementById('progress-border');
 
 
-    //progress.style.strokeDashoffset = 1023 - (timer[timer.mode] * 60 - timer.remainingTime.total);
+    //Progress circle
     let timeFraction = 1023 / (timer[timer.mode] * 60);
 
     let progressTimer = timeFraction * timer.remainingTime.total;
 
     progress.style.strokeDashoffset = 1023 - progressTimer;
 
-    console.log(timer[timer.mode] * 60 - timer.remainingTime.total);
-    console.log(timer[timer.mode] * 60);
     console.log(timer[timer.mode]);
-    console.log(timer.remainingTime.total);
-    console.log(timeFraction);
+    console.log(timer.pomodoro);
+    console.log(timer.shortBreak);
+    console.log(timer.longBreak);
 
 }

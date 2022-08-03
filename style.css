@@ -36,11 +36,20 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100vw;
+	height: 100vh;
 }
-nav a img {
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+header img {
 	width: 100%;
 }
-nav {
+header {
 	margin-top: 48px;
 	margin-bottom: 56px;
 }
@@ -197,6 +206,7 @@ h3 {
 	background: rgba(10, 12, 28, 0.5);
 	position: absolute;
 	opacity: 1;
+	top: 0;
 	transition: opacity 0.3s ease-in-out;
 }
 #background.inactive-background {
@@ -364,19 +374,19 @@ input[type="number"] {
 	top: 13px;
 	right: 16px;
 }
-#up-arrow,
-#down-arrow {
+.up-arrow,
+.down-arrow {
 	border: none;
 	background: none;
 	cursor: pointer;
 }
-#up-arrow svg,
-#down-arrow svg {
+.up-arrow svg,
+.down-arrow svg {
 	stroke: rgb(30, 33, 63);
 	opacity: 0.25;
 }
-#up-arrow:hover svg,
-#down-arrow:hover svg {
+.up-arrow:hover svg,
+.down-arrow:hover svg {
 	opacity: 1;
 }
 #apply-btn {
@@ -452,10 +462,10 @@ input[type="number"] {
 }
 /*------ END OF CIRCLE PROGRESS ------*/
 @media (min-width: 768px) and (max-width: 1399px) {
-	nav a img {
+	header img {
 		height: 32px;
 	}
-	nav {
+	header {
 		margin-top: 80px;
 		margin-bottom: 55px;
 	}
@@ -468,10 +478,10 @@ input[type="number"] {
 }
 
 @media (max-width: 767px) {
-	nav a img {
+	header img {
 		height: 24px;
 	}
-	nav {
+	header {
 		margin-top: 32px;
 		margin-bottom: 45px;
 	}

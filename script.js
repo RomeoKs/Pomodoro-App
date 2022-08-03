@@ -9,15 +9,24 @@ function decrease(element) {
     if (parseInt(el.value) > 0) {
         el.value = parseInt(el.value) - 1;
     }
+
 }
 
 //Modal OPEN/CLOSE
 const bck = document.getElementById("background");
 
 document.querySelector(".close-modal").addEventListener("click", () => {
-    document.querySelector(".modal").style.display = "none";
-    bck.classList.remove("active-background");
-    bck.classList.add("inactive-background");
+
+    if (parseFloat(timer.pomodoro) == 0 || parseFloat(timer.shortBreak) == 0 || parseFloat(timer.longBreak) == 0) {
+        document.querySelector(".modal").style.display = "block";
+        bck.classList.add("active-background");
+        bck.classList.remove("inactive-background");
+    } else {
+        document.querySelector(".modal").style.display = "none";
+        bck.classList.remove("active-background");
+        bck.classList.add("inactive-background");
+    }
+
 })
 
 document.querySelector(".settings").addEventListener("click", () => {
@@ -69,7 +78,7 @@ applyBtn.addEventListener("click", () => {
             root.style.setProperty('--font-choice', 'Roboto Slab');
             document.documentElement.style.fontSize = "16px";
         } else {
-            clockNumbers.style.letterSpacing = "-10px";
+            clockNumbers.style.letterSpacing = "-5px";
             root.style.setProperty('--font-choice', 'Space Mono');
             document.documentElement.style.fontSize = "14px";
         }
@@ -90,7 +99,7 @@ applyBtn.addEventListener("click", () => {
 
 
 
-// Timer
+// Timer app
 
 document.addEventListener('DOMContentLoaded', () => {
     // Let's check if the browser supports notifications
@@ -233,6 +242,28 @@ function stopTimer() {
     mainButton.textContent = 'START';
 }
 
+// let strokeDashOffset; //Mobile - 335, Desktop - 1023
+// const progress = document.getElementById('progress-circle');
+
+
+// function mediaQuery() {
+//     if (matchMedia('only screen and (max-width: 600px)').matches) {
+//         // progress.setAttribute("cx", 124);
+//         // progress.setAttribute("cy", 124);
+//         // progress.setAttribute("r", 117);
+//         //strokeDashOffset = 284;
+//     } else if (matchMedia('only screen and (min-width: 1440px)').matches) {
+//         // progress.setAttribute("cx", 169);
+//         // progress.setAttribute("cy", 169);
+//         // progress.setAttribute("r", 163);
+//         //strokeDashOffset = 1022;
+//     }
+
+// }
+
+
+// //mediaQuery()
+
 function updateClock() {
     const { remainingTime } = timer;
     const minutes = `${remainingTime.minutes}`.padStart(2, '0')
@@ -245,19 +276,18 @@ function updateClock() {
     sec.textContent = seconds;
     const text = timer.mode === 'pomodoro' ? 'Working' : 'Break time';
     document.title = `${minutes}:${seconds} — ${text}`;
-    const progress = document.getElementById('progress-border');
+
 
 
     //Progress circle
-    let timeFraction = 1023 / (timer[timer.mode] * 60);
+    const progress = document.getElementById('progress-border');
+    let strokeDashOffset = 251.2;
+    let timeFraction = strokeDashOffset / (timer[timer.mode] * 60);
 
     let progressTimer = timeFraction * timer.remainingTime.total;
 
-    progress.style.strokeDashoffset = 1023 - progressTimer;
-
-    console.log(timer[timer.mode]);
-    console.log(timer.pomodoro);
-    console.log(timer.shortBreak);
-    console.log(timer.longBreak);
+    progress.style.strokeDashoffset = strokeDashOffset - progressTimer;
 
 }
+
+

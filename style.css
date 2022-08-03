@@ -126,7 +126,10 @@ nav {
 	position: absolute;
 	top: 132px;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 }
+
 .action {
 	position: absolute;
 	color: var(--accent);
@@ -430,23 +433,120 @@ input[type="number"] {
 	width: 339px;
 	height: 339px;
 }
+
 .svg-progress {
-	transform: rotate(-90deg);
-	width: 100%;
-	height: 100%;
+	width: 410px;
+	height: 410px;
 	position: absolute;
-	top: 13px;
+	top: -21px;
 }
 
 #progress-border {
 	fill: transparent;
 	stroke: var(--color-choice);
-	stroke-width: 11px;
+	stroke-width: 3px;
 	stroke-linecap: round;
-	stroke-dasharray: 1023;
-	stroke-dashoffset: 0;
-	/*1023*/
-	/* Change number value to shift progress bar */
+	stroke-dasharray: 251.2;
+	stroke-dashoffset: 251.2;
 	z-index: 3;
 }
 /*------ END OF CIRCLE PROGRESS ------*/
+
+@media (max-width: 767px) {
+	nav a img {
+		height: 24px;
+	}
+	nav {
+		margin-top: 32px;
+		margin-bottom: 45px;
+	}
+	.duration-choice {
+		width: 327px;
+		height: 63px;
+	}
+	.duration-choice .choices {
+		width: 311px;
+		height: 48px;
+	}
+	.pomodoro-wrapper {
+		width: 300px;
+		height: 300px;
+	}
+	.container .container-inner {
+		width: 268px;
+		height: 268px;
+	}
+	.circle {
+		width: 248px;
+		height: 248px;
+	}
+	.container .container-inner .time {
+		font-size: 5rem;
+		top: 86px;
+		letter-spacing: -4px;
+	}
+	.svg-progress {
+		width: 300px;
+		height: 300px;
+		position: absolute;
+		top: -16px;
+	}
+	.action {
+		bottom: 77px;
+		font-size: 0.875rem;
+		letter-spacing: 13.125px;
+		margin-left: 18px;
+	}
+	/*------ MODAL ------*/
+	.modal {
+		width: 327px;
+		height: 549px;
+		padding-top: 24px;
+	}
+	h2 {
+		font-size: 1.25rem;
+		line-height: 25px;
+		padding: 0px 24px 28px;
+	}
+	.modal .close-modal {
+		top: 26px;
+	}
+	.time-container {
+		padding: 24px 0px 0px 0px;
+	}
+	.modal-selectors {
+		margin: 0px 24px 0px 24px;
+	}
+	h3 {
+		font-size: 0.6875rem;
+		text-align: center;
+		margin-bottom: 18px;
+	}
+	.time-container h3 {
+		padding-bottom: 0px;
+	}
+	.modal-selectors.time-container .input-container {
+		flex-direction: column;
+	}
+	.input-container label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 14px;
+	}
+	.input-container label:not(:last-child) {
+		margin-right: 0px;
+	}
+	input[type="number"] {
+		width: 140px;
+		height: 40px;
+		margin-top: 8px;
+	}
+	.input__butons-container {
+		top: 9px;
+	}
+	.font-container,
+	.color-container {
+		flex-direction: column;
+	}
+}

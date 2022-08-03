@@ -451,6 +451,21 @@ input[type="number"] {
 	z-index: 3;
 }
 /*------ END OF CIRCLE PROGRESS ------*/
+@media (min-width: 768px) and (max-width: 1399px) {
+	nav a img {
+		height: 32px;
+	}
+	nav {
+		margin-top: 80px;
+		margin-bottom: 55px;
+	}
+	.pomodoro-wrapper {
+		margin-top: 109px;
+	}
+	.settings {
+		margin-top: 144px;
+	}
+}
 
 @media (max-width: 767px) {
 	nav a img {

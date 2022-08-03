@@ -39,15 +39,21 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
+h1 {
+	font-family: "Kumbh Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 40px;
+	text-align: center;
+	color: #d7e0ff;
+}
 main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
-}
-header img {
-	width: 100%;
 }
 header {
 	margin-top: 48px;
@@ -464,8 +470,9 @@ input[type="number"] {
 }
 /*------ END OF CIRCLE PROGRESS ------*/
 @media (min-width: 768px) and (max-width: 1399px) {
-	header img {
-		height: 32px;
+	h1 {
+		font-size: 32px;
+		line-height: 40px;
 	}
 	header {
 		margin-top: 80px;
@@ -480,8 +487,9 @@ input[type="number"] {
 }
 
 @media (max-width: 767px) {
-	header img {
-		height: 24px;
+	h1 {
+		font-size: 24px;
+		line-height: 30px;
 	}
 	header {
 		margin-top: 32px;

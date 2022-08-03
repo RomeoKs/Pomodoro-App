@@ -20,7 +20,8 @@
 	</head>
 	<body>
 		<header>
-			<img src="./assets/logo.svg" alt="logo" />
+			<h1>pomodoro</h1>
+			<!-- <img src="./assets/logo.svg" alt="logo" /> -->
 		</header>
 		<main>
 			<div class="duration-choice">
@@ -103,9 +104,44 @@
 					<h3>Time (minutes)</h3>
 					<div class="input-container">
 						<div class="time-input input_pomodoro">
-						<label for="pomodoro"
-							>pomodoro
-							
+							<div class="input__butons-container">
+								<div
+									class="up-arrow"
+									onclick="increase('pomodoro')"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="7"
+									>
+										<path
+											fill="none"
+											stroke="#1E213F"
+											stroke-width="2"
+											d="M1 6l6-4 6 4"
+										/>
+									</svg>
+								</div>
+								<div
+									class="down-arrow"
+									onclick="decrease('pomodoro')"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="7"
+									>
+										<path
+											fill="none"
+											stroke="#1E213F"
+											stroke-width="2"
+											d="M1 1l6 4 6-4"
+										/>
+									</svg>
+								</div>
+							</div>
+							<label for="pomodoro"
+								>pomodoro
 								<input
 									type="number"
 									name="pomodoro"
@@ -113,142 +149,101 @@
 									value="25"
 									min="1"
 								/>
-								<div class="input__butons-container">
-									<div
-										class="up-arrow"
-										onclick="increase('pomodoro')"
+							</label>
+						</div>
+						<div class="time-input input_short-break">
+							<div class="input__butons-container">
+								<div
+									class="up-arrow"
+									onclick="increase('pomodoro')"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="7"
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="14"
-											height="7"
-										>
-											<path
-												fill="none"
-												stroke="#1E213F"
-												stroke-width="2"
-												d="M1 6l6-4 6 4"
-											/>
-										</svg>
-									</div>
-									<div
-										class="down-arrow"
-										onclick="decrease('pomodoro')"
+										<path
+											fill="none"
+											stroke="#1E213F"
+											stroke-width="2"
+											d="M1 6l6-4 6 4"
+										/>
+									</svg>
+								</div>
+								<div
+									class="down-arrow"
+									onclick="decrease('pomodoro')"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="7"
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="14"
-											height="7"
-										>
-											<path
-												fill="none"
-												stroke="#1E213F"
-												stroke-width="2"
-												d="M1 1l6 4 6-4"
-											/>
-										</svg>
-									</div>
+										<path
+											fill="none"
+											stroke="#1E213F"
+											stroke-width="2"
+											d="M1 1l6 4 6-4"
+										/>
+									</svg>
 								</div>
 							</div>
-						</label>
-						<div class="time-input input_short-break">
-						<label for="short-break"
-							>short break
-							
-								<input
+							<label for="short-break"
+								>short break<input
 									type="number"
 									name="short-break"
 									id="short-break"
 									value="5"
 									min="1"
-								/>
-								<div class="input__butons-container">
-									<div
-										class="up-arrow"
-										onclick="increase('short-break')"
+							/></label>
+						</div>
+						<div class="time-input input__long-break">
+							<div class="input__butons-container">
+								<div
+									class="up-arrow"
+									onclick="increase('pomodoro')"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="7"
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="14"
-											height="7"
-										>
-											<path
-												fill="none"
-												stroke="#1E213F"
-												stroke-width="2"
-												d="M1 6l6-4 6 4"
-											/>
-										</svg>
-									</div>
-									<div
-										class="down-arrow"
-										onclick="decrease('short-break')"
+										<path
+											fill="none"
+											stroke="#1E213F"
+											stroke-width="2"
+											d="M1 6l6-4 6 4"
+										/>
+									</svg>
+								</div>
+								<div
+									class="down-arrow"
+									onclick="decrease('pomodoro')"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="7"
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="14"
-											height="7"
-										>
-											<path
-												fill="none"
-												stroke="#1E213F"
-												stroke-width="2"
-												d="M1 1l6 4 6-4"
-											/>
-										</svg>
-									</div>
+										<path
+											fill="none"
+											stroke="#1E213F"
+											stroke-width="2"
+											d="M1 1l6 4 6-4"
+										/>
+									</svg>
 								</div>
 							</div>
-						</label>
-						<div class="time-input input__long-break">
-						<label for="long-break"
-							>long break
-							
-								<input
+							<label for="long-break"
+								>long break<input
 									type="number"
 									name="long-break"
 									id="long-break"
 									value="15"
 									min="1"
 								/>
-								<div class="input__butons-container">
-									<div
-										class="up-arrow"
-										onclick="increase('long-break')"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="14"
-											height="7"
-										>
-											<path
-												fill="none"
-												stroke="#1E213F"
-												stroke-width="2"
-												d="M1 6l6-4 6 4"
-											/>
-										</svg>
-									</div>
-									<div
-										class="down-arrow"
-										onclick="decrease('long-break')"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="14"
-											height="7"
-										>
-											<path
-												fill="none"
-												stroke="#1E213F"
-												stroke-width="2"
-												d="M1 1l6 4 6-4"
-											/>
-										</svg>
-									</div>
-								</div>
-							</div>
-						</label>
+							</label>
+						</div>
 					</div>
 				</div>
 				<div class="modal-selectors font-container">

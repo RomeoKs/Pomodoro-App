@@ -222,10 +222,11 @@ h3 {
 .input-container {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 input[type="number"] {
 	margin-top: 5px;
-	width: 100%;
+	width: 140px;
 	height: 48px;
 	background: var(--primary_light);
 	border-radius: 10px;
@@ -350,10 +351,10 @@ input[type="number"] {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	padding: 24px 0px;
+	padding: 19px 0px;
 }
 .color-container {
-	padding-top: 24px;
+	padding-top: 19px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -366,12 +367,13 @@ input[type="number"] {
 }
 .time-input {
 	position: relative;
+	width: 140px;
 }
 .input__butons-container {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	top: 13px;
+	top: 26px;
 	right: 16px;
 }
 .up-arrow,
@@ -526,7 +528,8 @@ input[type="number"] {
 	.modal {
 		width: 327px;
 		height: 549px;
-		padding-top: 24px;
+		padding-top: 19px;
+		border-radius: 15px;
 	}
 	h2 {
 		font-size: 1.25rem;
@@ -534,10 +537,10 @@ input[type="number"] {
 		padding: 0px 24px 28px;
 	}
 	.modal .close-modal {
-		top: 26px;
+		top: 23px;
 	}
 	.time-container {
-		padding: 24px 0px 0px 0px;
+		padding: 19px 0px 0px 0px;
 	}
 	.modal-selectors {
 		margin: 0px 24px 0px 24px;
@@ -547,8 +550,18 @@ input[type="number"] {
 		text-align: center;
 		margin-bottom: 18px;
 	}
+	.time-container {
+		padding-bottom: 24px;
+	}
 	.time-container h3 {
 		padding-bottom: 0px;
+	}
+	.time-input {
+		width: 100%;
+	}
+	.time-input:not(.time-input.input_pomodoro) {
+		width: 100%;
+		margin-top: 8px;
 	}
 	.modal-selectors.time-container .input-container {
 		flex-direction: column;
@@ -557,7 +570,6 @@ input[type="number"] {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		font-size: 14px;
 	}
 	.input-container label:not(:last-child) {
 		margin-right: 0px;
@@ -565,10 +577,10 @@ input[type="number"] {
 	input[type="number"] {
 		width: 140px;
 		height: 40px;
-		margin-top: 8px;
+		margin-top: 0px;
 	}
 	.input__butons-container {
-		top: 12px;
+		top: -2px;
 	}
 	.font-container,
 	.color-container {

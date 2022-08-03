@@ -102,18 +102,19 @@
 				<div class="modal-selectors time-container">
 					<h3>Time (minutes)</h3>
 					<div class="input-container">
+						<div class="time-input input_pomodoro">
 						<label for="pomodoro"
 							>pomodoro
-							<div class="time-input input_pomodoro">
+							
 								<input
 									type="number"
 									name="pomodoro"
 									id="pomodoro"
-									value="18"
+									value="25"
 									min="1"
 								/>
 								<div class="input__butons-container">
-									<button
+									<div
 										class="up-arrow"
 										onclick="increase('pomodoro')"
 									>
@@ -129,8 +130,8 @@
 												d="M1 6l6-4 6 4"
 											/>
 										</svg>
-									</button>
-									<button
+									</div>
+									<div
 										class="down-arrow"
 										onclick="decrease('pomodoro')"
 									>
@@ -146,14 +147,14 @@
 												d="M1 1l6 4 6-4"
 											/>
 										</svg>
-									</button>
+									</div>
 								</div>
 							</div>
 						</label>
-
+						<div class="time-input input_short-break">
 						<label for="short-break"
 							>short break
-							<div class="time-input input_short-break">
+							
 								<input
 									type="number"
 									name="short-break"
@@ -162,7 +163,7 @@
 									min="1"
 								/>
 								<div class="input__butons-container">
-									<button
+									<div
 										class="up-arrow"
 										onclick="increase('short-break')"
 									>
@@ -178,8 +179,8 @@
 												d="M1 6l6-4 6 4"
 											/>
 										</svg>
-									</button>
-									<button
+									</div>
+									<div
 										class="down-arrow"
 										onclick="decrease('short-break')"
 									>
@@ -195,14 +196,14 @@
 												d="M1 1l6 4 6-4"
 											/>
 										</svg>
-									</button>
+									</div>
 								</div>
 							</div>
 						</label>
-
+						<div class="time-input input__long-break">
 						<label for="long-break"
 							>long break
-							<div class="time-input input__long-break">
+							
 								<input
 									type="number"
 									name="long-break"
@@ -211,7 +212,7 @@
 									min="1"
 								/>
 								<div class="input__butons-container">
-									<button
+									<div
 										class="up-arrow"
 										onclick="increase('long-break')"
 									>
@@ -227,8 +228,8 @@
 												d="M1 6l6-4 6 4"
 											/>
 										</svg>
-									</button>
-									<button
+									</div>
+									<div
 										class="down-arrow"
 										onclick="decrease('long-break')"
 									>
@@ -244,7 +245,7 @@
 												d="M1 1l6 4 6-4"
 											/>
 										</svg>
-									</button>
+									</div>
 								</div>
 							</div>
 						</label>
